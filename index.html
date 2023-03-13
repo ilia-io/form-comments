@@ -19,10 +19,22 @@
         <section class="make-comment container">
           <h1 class="main__title">Написать комментарий</h1>
           <form action="submit" class="form">
-            <input name="name" type="text" class="name" required />
-            <input name="text" type="text" class="text" required />
+            <input
+              name="name"
+              type="text"
+              class="name"
+              required
+              placeholder="Ваше имя"
+            />
+            <input
+              name="text"
+              type="text"
+              class="text"
+              required
+              placeholder="Присоединиться к обсуждению..."
+            />
 
-            <label for="date">Введите дату:</label>
+            <label for="date">Введите дату (не обязательно):</label>
             <input
               name="date"
               type="date"
@@ -30,24 +42,37 @@
               min="2000-01-01"
               max=""
               id="date"
+              class="input-date"
             />
-            <input name="btn" type="button" class="submit-btn" />
+            <input
+              name="btn"
+              type="button"
+              class="submit-btn"
+              value="Отправить"
+            />
           </form>
         </section>
-        <section class="comments-list container">
-          <h2>Список комментариев:</h2>
-          <ul>
+        <section class="comments container">
+          <h2 class="comments__title">Список комментариев:</h2>
+          <ul class="comments__list">
             <li class="comment">
-              <h2 class="comment__name">Иван</h2>
-              <p class="comment__text">Дорогой дневник</p>
-              <p class="comment__date">вчера, 14.14.1414</p>
+              <div class="comment__top-box">
+                <h2 class="comment__name">Иван</h2>
+                <p class="comment__date">вчера, 14.14.1414</p>
+              </div>
+
+              <p class="comment__text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
+                laboriosam necessitatibus quo. Quos delectus, molestiae
+                laudantium sequi voluptatem eaque fugiat, dignissimos culpa,
+                dolores ad suscipit ullam. Itaque temporibus modi iusto
+                perferendis corporis adipisci fuga reprehenderit magnam ut
+                accusantium, illo quasi laboriosam dolorem. Ducimus similique
+                praesentium inventore nobis, consequatur minima esse?
+              </p>
               <div class="comment__icon-box">
-                <button class="comment__fav-btn" type="button">
-                  Cердечко лайка
-                </button>
-                <button class="comment__remove-btn" type="button">
-                  Иконка корзины
-                </button>
+                <button class="comment__fav-btn" type="button">Cерд</button>
+                <button class="comment__remove-btn" type="button">Корз</button>
               </div>
             </li>
           </ul>

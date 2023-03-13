@@ -31,31 +31,84 @@ body {
   margin-top: 40px;
 }
 .make-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .main__title {
   /* padding: 40px; */
+  margin-bottom: 20px;
 }
 .form {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.form > *:not(label) {
+  margin-bottom: 20px;
+}
+form > label {
+  font-size: 14px;
+  font-style: italic;
 }
 .name {
 }
 .text {
 }
-.submit-btn {
+.input-date {
 }
-.comments-list {
+.submit-btn {
+  cursor: pointer;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 40px;
+}
+.comments__title {
+  margin-bottom: 20px;
+}
+.comments__list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .comment {
+  margin-bottom: 20px;
+
+  max-width: 450px;
+}
+
+.comment__top-box {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
 }
 .comment__name {
 }
-.comment__text {
-}
+
 .comment__date {
 }
+.comment__text {
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
 .comment__icon-box {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
 }
 .comment__fav-btn {
+  width: 40px;
+  cursor: pointer;
 }
 .comment__remove-btn {
+  width: 40px;
+  cursor: pointer;
 }
