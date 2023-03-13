@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #aaa;
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.container {
+  width: 1171px;
+  margin: 0 auto;
+}
+
+.main {
+}
+.main__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.make-comment {
+}
+.main__title {
+  /* padding: 40px; */
+}
+.form {
+}
+.name {
+}
+.text {
+}
+.submit-btn {
+}
+.comments-list {
+}
+.comment {
+}
+.comment__name {
+}
+.comment__text {
+}
+.comment__date {
+}
+.comment__icon-box {
+}
+.comment__fav-btn {
+}
+.comment__remove-btn {
+}

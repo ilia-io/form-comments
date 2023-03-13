@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form comments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="main__wrapper">
+        <section class="make-comment container">
+          <h1 class="main__title">Написать комментарий</h1>
+          <form action="submit" class="form">
+            <input name="name" type="text" class="name" required />
+            <input name="text" type="text" class="text" required />
+
+            <label for="date">Введите дату:</label>
+            <input
+              name="date"
+              type="date"
+              value=""
+              min="2000-01-01"
+              max=""
+              id="date"
+            />
+            <input name="btn" type="button" class="submit-btn" />
+          </form>
+        </section>
+        <section class="comments-list container">
+          <h2>Список комментариев:</h2>
+          <ul>
+            <li class="comment">
+              <h2 class="comment__name">Иван</h2>
+              <p class="comment__text">Дорогой дневник</p>
+              <p class="comment__date">вчера, 14.14.1414</p>
+              <div class="comment__icon-box">
+                <button class="comment__fav-btn" type="button">
+                  Cердечко лайка
+                </button>
+                <button class="comment__remove-btn" type="button">
+                  Иконка корзины
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
