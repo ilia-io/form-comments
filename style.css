@@ -44,21 +44,44 @@ body {
   display: flex;
   flex-direction: column;
 }
-.form > *:not(label) {
-  margin-bottom: 20px;
-}
-form > label {
+.form > label {
   font-size: 14px;
   font-style: italic;
 }
+.form > * {
+  border-radius: 4px;
+}
+.error {
+  color: crimson;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 3px;
+}
 .name {
+  border: 2px solid transparent;
+  padding: 4px;
 }
 .text {
+  resize: none;
+  transition: 0.3s;
+  height: 4em;
+  width: 300px;
+  margin-top: 20px;
+  padding: 4px;
+}
+.date-label {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 14px;
 }
 .input-date {
+  padding: 4px;
 }
 .submit-btn {
+  margin-top: 20px;
   cursor: pointer;
+  padding: 4px;
 }
 .comments {
   display: flex;

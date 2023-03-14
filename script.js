@@ -17,6 +17,16 @@ const trash = document.querySelector('.comment__remove-btn');
 -- если текущая дата, пишем "сегодня, 16:23" (ключевое - слово сегодня, время подставляется)
 -- если вчерашняя дата, пишем "вчера, 18:39"
 */
+const error = 'null';
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (error !== null) {
+    addComment();
+    clearInputs();
+  }
+});
 
 heart.addEventListener('click', () => {
   heart.classList.toggle('favourite');
@@ -26,14 +36,30 @@ trash.addEventListener('click', () => {
   trash.closest('.comment').style.display = 'none';
 });
 
-const error = 'null';
+inputText.addEventListener('focus', () => {
+  inputText.style.height = '10em';
+});
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
+inputName.addEventListener('blur', () => {
+  if (!inputName.value) errorMessage(inputName);
+});
 
-  if (error !== null) {
-    addComment();
-    clearInputs();
+inputText.addEventListener('blur', () => {
+  inputText.style.height = '4em';
+  if (!inputText.value) errorMessage(inputText);
+});
+
+inputName.addEventListener('focus', () => {
+  if (inputName.nextElementSibling.classList.contains('error')) {
+    inputName.nextElementSibling.remove();
+    inputName.style.border = '2px solid transparent';
+  }
+});
+
+inputText.addEventListener('focus', () => {
+  if (inputText.nextElementSibling.classList.contains('error')) {
+    inputText.nextElementSibling.remove();
+    inputText.style.border = '2px solid transparent';
   }
 });
 
@@ -75,4 +101,12 @@ function clearInputs() {
   inputName.value = '';
   inputText.value = '';
   inputDate.value = '';
+}
+
+function errorMessage(element) {
+  const msg = document.createElement('div');
+  msg.innerHTML = 'Заполните это поле';
+  msg.classList.add('error');
+  element.after(msg);
+  element.style.border = '2px solid crimson';
 }
