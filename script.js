@@ -3,8 +3,6 @@ const inputName = form.elements.name;
 const inputText = form.elements.text;
 const inputDate = form.elements.date;
 const commentList = document.querySelector('.comments__list');
-let heart = document.querySelectorAll('.comment__fav-btn');
-let trash = document.querySelectorAll('.comment__remove-btn');
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -75,10 +73,12 @@ function processDate() {
     return `${dateTime}`;
   }
 }
+
 function addComment() {
-  let date = processDate();
+  const date = processDate();
   commentList.prepend(makeComment(inputName.value, inputText.value, date));
 }
+
 function makeComment(name, text, date) {
   const li = document.createElement('li');
   li.classList.add('comment');
@@ -111,8 +111,8 @@ function errorMessage(element) {
 
 const heartIconSVG = `<svg
                   onclick="this.classList.toggle('favourite')"
-                  width="40px"
-                  height="40px"
+                  width="30px"
+                  height="30px"
                   class="comment__fav-btn"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -129,8 +129,8 @@ const heartIconSVG = `<svg
 
 const trashIconSVG = `<svg
                   onclick="this.closest('.comment').style.display = 'none'"
-                  width="40px"
-                  height="40px"
+                  width="30px"
+                  height="30px"
                   class="comment__remove-btn"
                   viewBox="0 0 24 24"
                   fill="none"

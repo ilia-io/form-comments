@@ -10,7 +10,9 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #aaa;
+  background-color: #5d84cc;
+  background: -moz-linear-gradient(-45deg, #6687c4 0%, #84ae9a 100%);
+  background: -webkit-linear-gradient(-45deg, #6687c4 0%, #84ae9a 100%);
   color: #000;
   font-weight: 400;
   font-size: 16px;
@@ -18,16 +20,18 @@ body {
 }
 
 .container {
-  width: 1171px;
+  max-width: 1171px;
   margin: 0 auto;
 }
 
 .main {
 }
 .main__wrapper {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   margin-top: 40px;
 }
 .make-comment {
@@ -36,6 +40,7 @@ body {
   align-items: center;
 }
 .main__title {
+  color: #222;
   /* padding: 40px; */
   margin-bottom: 20px;
 }
@@ -73,16 +78,36 @@ body {
 .date-label {
   margin-top: 20px;
   font-style: italic;
-  font-size: 14px;
+  font-size: 10px;
+  color: #555;
 }
 .input-date {
   padding: 4px;
 }
 .submit-btn {
-  margin-top: 20px;
-  cursor: pointer;
-  padding: 4px;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  background: #5a89bd;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  box-shadow: 0 3px 0px #304c6c;
+  margin: 20px 10px 20px 0;
+  outline: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
+
+.submit-btn:active {
+  box-shadow: 0 0px 0px #304c6c;
+  top: 3px;
+}
+
 .comments {
   display: flex;
   flex-direction: column;
@@ -91,6 +116,7 @@ body {
   margin-top: 40px;
 }
 .comments__title {
+  color: #222;
   margin-bottom: 20px;
 }
 .comments__list {
@@ -102,9 +128,15 @@ body {
   justify-content: center;
 }
 .comment {
+  background-color: #5d84cc;
+  background: -moz-linear-gradient(-45deg, #6687c4 0%, #8fa0c1 100%);
+  background: -webkit-linear-gradient(-45deg, #6687c4 0%, #8fa0c1 100%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
   margin-bottom: 20px;
 
-  width: 450px;
+  padding: 20px;
+  width: 310px;
 }
 
 .comment__top-box {
@@ -114,6 +146,7 @@ body {
   margin-bottom: 20px;
 }
 .comment__name {
+  color: #222;
 }
 
 .comment__date {
@@ -121,12 +154,14 @@ body {
 .comment__text {
   padding: 0 10px;
   margin-bottom: 20px;
+  border: 0.5px solid #5d84cc50;
+  box-shadow: #5d84cc50 0px 4px 6px -1px, #5d84cc50 0px 2px 4px -1px;
+  border-radius: 4px;
 
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
 .comment__icon-box {
-  width: 140px;
   display: flex;
   justify-content: space-between;
 }
