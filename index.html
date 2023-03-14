@@ -36,7 +36,9 @@
               placeholder="Присоединиться к обсуждению..."
             ></textarea>
 
-            <label class="date-label" for="date">Введите дату (не обязательно):</label>
+            <label class="date-label" for="date"
+              >Введите дату (не обязательно):</label
+            >
             <input
               name="date"
               type="date"
@@ -74,6 +76,7 @@
               </p>
               <div class="comment__icon-box">
                 <svg
+                  onclick="this.classList.toggle('favourite')"
                   width="40px"
                   height="40px"
                   class="comment__fav-btn"
@@ -90,6 +93,7 @@
                   />
                 </svg>
                 <svg
+                  onclick="this.closest('.comment').style.display = 'none'"
                   width="40px"
                   height="40px"
                   class="comment__remove-btn"
