@@ -3,8 +3,28 @@ const inputName = form.elements.name;
 const inputText = form.elements.text;
 const inputDate = form.elements.date;
 //const inputBtn = form.elements.btn;
-
 const commentList = document.querySelector('.comments__list');
+const heart = document.querySelector('.comment__fav-btn');
+const trash = document.querySelector('.comment__remove-btn');
+/* TODO 
+--- если не задано, то дата текущая
+
+
+добавить валидацию (какие именно ограничения - на свое усмотрение).
+Если форма заполнена некорректно (например, имя пустое), то рядом с полем сообщение об ошибке
+когда в поле начинаем печатать, то ошибка исчезает
+- дата, время добавления
+-- если текущая дата, пишем "сегодня, 16:23" (ключевое - слово сегодня, время подставляется)
+-- если вчерашняя дата, пишем "вчера, 18:39"
+*/
+
+heart.addEventListener('click', () => {
+  heart.classList.toggle('favourite');
+});
+
+trash.addEventListener('click', () => {
+  trash.closest('.comment').style.display = 'none';
+});
 
 const error = 'null';
 
@@ -19,9 +39,13 @@ form.addEventListener('submit', function (event) {
 
 function dateFormatted() {
   let d = new Date();
-  d = ['0' + d.getDate(), '0' + (d.getMonth() + 1), '' + d.getFullYear()].map(
-    (component) => component.slice(-2)
-  );
+  d = [
+    '0' + d.getDate(),
+    '0' + (d.getMonth() + 1),
+    '' + d.getFullYear(),
+    '0' + d.getHours(),
+    '0' + d.getMinutes(),
+  ].map((component) => component.slice(-2));
 
   return d;
 }

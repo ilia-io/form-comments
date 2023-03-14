@@ -81,7 +81,7 @@ form > label {
 .comment {
   margin-bottom: 20px;
 
-  max-width: 450px;
+  width: 450px;
 }
 
 .comment__top-box {
@@ -103,15 +103,16 @@ form > label {
   overflow-wrap: anywhere;
 }
 .comment__icon-box {
-  width: 120px;
+  width: 140px;
   display: flex;
   justify-content: space-between;
 }
 .comment__fav-btn {
-  width: 40px;
   cursor: pointer;
 }
+.favourite {
+  fill: crimson;
+}
 .comment__remove-btn {
-  width: 40px;
   cursor: pointer;
 }
