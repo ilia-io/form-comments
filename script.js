@@ -4,7 +4,7 @@ const inputText = form.elements.text;
 const inputDate = form.elements.date;
 const commentList = document.querySelector('.comments__list');
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   addComment();
@@ -19,47 +19,49 @@ inputText.addEventListener('blur', () => {
   if (!inputText.value) errorMessage(inputText);
 });
 
-inputName.addEventListener('focus', () => {
-  if (inputName.nextElementSibling.classList.contains('error')) {
-    inputName.nextElementSibling.remove();
-    inputName.style.border = '2px solid transparent';
-  }
-});
+inputName.addEventListener('focus', () => cleanErrorOn(inputName));
 
-inputText.addEventListener('focus', () => {
-  if (inputText.nextElementSibling.classList.contains('error')) {
-    inputText.nextElementSibling.remove();
-    inputText.style.border = '2px solid transparent';
-  }
-});
+inputText.addEventListener('focus', () => cleanErrorOn(inputText));
 
-const isToday = (testDate) => {
+function cleanErrorOn(element) {
+  if (element.nextElementSibling.classList.contains('error')) {
+    element.nextElementSibling.remove();
+    element.style.border = '2px solid transparent';
+  }
+}
+
+function isToday(testDate) {
   const today = new Date();
   return (
-    testDate.getDate() === today.getUTCDate() &&
-    testDate.getMonth() === today.getUTCMonth() &&
-    testDate.getFullYear() === today.getUTCFullYear()
+    testDate.getDate() === today.getDate() &&
+    testDate.getMonth() === today.getMonth() &&
+    testDate.getFullYear() === today.getFullYear()
   );
-};
+}
 
-const isYesterday = (testDate) => {
+function isYesterday(testDate) {
   const yesterday = new Date(new Date().getTime() - 1000 * 60 * 60 * 24);
   return (
-    testDate.getDate() === yesterday.getUTCDate() &&
-    testDate.getMonth() === yesterday.getUTCMonth() &&
-    testDate.getFullYear() === yesterday.getUTCFullYear()
+    testDate.getDate() === yesterday.getDate() &&
+    testDate.getMonth() === yesterday.getMonth() &&
+    testDate.getFullYear() === yesterday.getFullYear()
   );
-};
+}
 
 function processDate() {
   let d = new Date(inputDate.value);
-  if (isNaN(d.getTime())) d = new Date();
+  if (isNaN(d.getTime())) {
+    d = new Date();
+  } else {
+    d.setHours(new Date().getHours());
+    d.setMinutes(new Date().getMinutes());
+  }
   let arr = [
     '0' + d.getDate(),
     '0' + (d.getMonth() + 1),
     '' + d.getFullYear(),
-    '00' + d.getUTCHours(),
-    '00' + d.getUTCMinutes(),
+    '00' + d.getHours(),
+    '00' + d.getMinutes(),
   ].map((component) => component.slice(-2));
 
   let dateTime = arr.slice(0, 3).join('.') + ' ' + arr.slice(3).join(':');
@@ -83,15 +85,14 @@ function makeComment(name, text, date) {
   const li = document.createElement('li');
   li.classList.add('comment');
   li.innerHTML = `<div class="comment__top-box">
-                <h2 class="comment__name">${name}</h2>
-                <p class="comment__date">${date}</p>
-              </div>
-
-              <p class="comment__text">${text}</p>
-              <div class="comment__icon-box">
-                ${heartIconSVG}
-                ${trashIconSVG}
-              </div>`;
+                  <h2 class="comment__name">${name}</h2>
+                  <p class="comment__date">${date}</p>
+                  </div>
+                  <p class="comment__text">${text}</p>
+                  <div class="comment__icon-box">
+                  ${heartIconSVG}
+                  ${trashIconSVG}
+                  </div>`;
   return li;
 }
 

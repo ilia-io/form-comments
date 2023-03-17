@@ -3,28 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #5d84cc;
   background: -moz-linear-gradient(-45deg, #6687c4 0%, #84ae9a 100%);
   background: -webkit-linear-gradient(-45deg, #6687c4 0%, #84ae9a 100%);
-  color: #000;
+  color: #222;
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.2;
 }
-
 .container {
   max-width: 1171px;
   margin: 0 auto;
-}
-
-.main {
 }
 .main__wrapper {
   width: 100%;
@@ -41,7 +35,6 @@ body {
 }
 .main__title {
   color: #222;
-  /* padding: 40px; */
   margin-bottom: 20px;
 }
 .form {
@@ -66,6 +59,8 @@ body {
 .name {
   border: 2px solid transparent;
   padding: 4px;
+
+  font-size: 16px;
 }
 .text {
   resize: none;
@@ -74,15 +69,21 @@ body {
   width: 300px;
   margin-top: 20px;
   padding: 4px;
+
+  font-size: 16px;
 }
 .date-label {
   margin-top: 20px;
+  margin-bottom: 2px;
   font-style: italic;
   font-size: 10px;
-  color: #555;
+  color: #444;
 }
 .input-date {
   padding: 4px;
+  border: 2px solid transparent;
+
+  font-size: 16px;
 }
 .submit-btn {
   width: 100%;
@@ -138,21 +139,18 @@ body {
   padding: 20px;
   width: 310px;
 }
-
 .comment__top-box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   margin-bottom: 20px;
 }
 .comment__name {
   color: #222;
 }
-
-.comment__date {
-}
 .comment__text {
-  padding: 0 10px;
+  padding: 4px 10px;
   margin-bottom: 20px;
   border: 0.5px solid #5d84cc50;
   box-shadow: #5d84cc50 0px 4px 6px -1px, #5d84cc50 0px 2px 4px -1px;
